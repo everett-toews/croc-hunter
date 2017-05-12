@@ -7,17 +7,17 @@
     "test": true
   },
   "container_repo": {
-    "host": "quay.io",
-    "master_acct": "lachie83",
-    "alt_acct": "lachie83",
-    "jenkins_creds_id": "quay_creds",
+    "host": "hub.docker.com",
+    "master_acct": "etoews",
+    "alt_acct": "etoews",
+    "jenkins_creds_id": "docker-hub-creds",
     "repo": "croc-hunter",
     "dockeremail": ".",
     "dockerfile": "./"
   },
   "pipeline": {
       "enabled": true,
-      "debug": false,
+      "debug": true,
       "library": {
         "branch": "master"
       }
