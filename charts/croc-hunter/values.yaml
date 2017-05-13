@@ -13,6 +13,14 @@ imageTag: "latest"
 imagePullPolicy: "Always"
 cpu: "10m"
 memory: "128Mi"
+# Ingress settings
+ingress:
+  enabled: true
+  hostname: croc-hunter.acs.az.estrado.io
+  annotations:
+     kubernetes.io/ingress.class: nginx
+     kubernetes.io/tls-acme: "true"
+  tls: true
 # PodDisruptionBudget
 pdb:
   enabled: false
