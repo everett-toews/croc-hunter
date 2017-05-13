@@ -95,6 +95,12 @@ volumes:[
         // perform docker login to quay as the docker-pipeline-plugin doesn't work with the next auth json format
         withCredentials([[$class          : 'UsernamePasswordMultiBinding', credentialsId: config.container_repo.jenkins_creds_id,
                         usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+
+              // If pipeline debugging enabled
+          if (config.pipeline.debug) {
+            println "registry username ${env.USERNAME}"
+          }
+
           sh "docker login -u ${env.USERNAME} -p ${env.PASSWORD}"
         }
 
